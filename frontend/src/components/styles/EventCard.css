@@ -1,0 +1,36 @@
+@import '../../styles/variables.css';
+
+.event-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--background-white);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: var(--spacing-md);
+}
+
+.event-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.event-info p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}

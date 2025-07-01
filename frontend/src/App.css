@@ -1,10 +1,34 @@
+@import './styles/variables.css';
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+main {
+  padding: var(--spacing-lg) 0;
+}
+
+/* Search Section Styles */
+.search-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Events Grid Styles */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,0 +1,24 @@
+@import '../../styles/variables.css';
+
+.volunteer-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.volunteer-home main {
+  padding: var(--spacing-lg) 0;
+}
+
+/* Search Section Styles */
+.search-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Events Grid Styles */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
