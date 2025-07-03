@@ -9,8 +9,8 @@ const Navbar = () => {
         <span className="logo-text">BlueForce</span>
       </div>
       <div className="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Events</a>
+        <a href="/">Home</a>
+        <a href="/volunteer">Events</a>
         <a href="#">About Us</a>
         <a href="#">Contact</a>
       </div>
