@@ -1,0 +1,353 @@
+/* Scoped All Enrolled Events CSS */
+.all-enrolled-page * {
+  box-sizing: border-box;
+}
+
+.all-enrolled-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.all-enrolled-page .header {
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.all-enrolled-page .header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+}
+
+.all-enrolled-page .logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.all-enrolled-page .logo-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #111827;
+  border-radius: 0.25rem;
+}
+
+.all-enrolled-page .logo-text {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.025em;
+}
+
+.all-enrolled-page .navigation {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.all-enrolled-page .nav-button {
+  background: none;
+  border: none;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.all-enrolled-page .nav-button.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.all-enrolled-page .nav-button:not(.active) {
+  color: #6b7280;
+}
+
+.all-enrolled-page .nav-button:hover {
+  color: #374151;
+}
+
+.all-enrolled-page .profile-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #f3f4f6;
+  background-color: #ccc;
+}
+
+.all-enrolled-page .main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.all-enrolled-page .page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+/* Event Cards */
+.all-enrolled-page .event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.all-enrolled-page .event-content {
+  flex: 1;
+}
+
+.all-enrolled-page .event-status {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.all-enrolled-page .event-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.all-enrolled-page .event-datetime {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.all-enrolled-page .view-details-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.all-enrolled-page .view-details-button:hover {
+  color: #1d4ed8;
+}
+
+.all-enrolled-page .view-details-arrow {
+  width: 1rem;
+  height: 1rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Countdown Timer */
+.all-enrolled-page .countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.all-enrolled-page .countdown-box {
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.all-enrolled-page .countdown-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.all-enrolled-page .countdown-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Buttons */
+.all-enrolled-page .action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.all-enrolled-page .button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.all-enrolled-page .button-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.all-enrolled-page .button-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.all-enrolled-page .button-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.all-enrolled-page .button-primary:hover {
+  background-color: #2563eb;
+}
+
+/* Illustration */
+.all-enrolled-page .illustration-container {
+  flex-shrink: 0;
+  width: 20rem;
+  height: 15rem;
+  background-color: #f1f5f9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-enrolled-page .illustration-inner {
+  width: 12rem;
+  height: 9rem;
+  background-color: #fed7aa;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.all-enrolled-page .community-illustration {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #bbf7d0, #86efac);
+  position: relative;
+}
+
+.all-enrolled-page .mountain-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.all-enrolled-page .person-figure {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-enrolled-page .person-head {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fb923c;
+  border-radius: 50%;
+  margin-bottom: 0.25rem;
+}
+
+.all-enrolled-page .person-body {
+  width: 1rem;
+  height: 2rem;
+  background-color: #2563eb;
+  border-radius: 0.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.all-enrolled-page .person-legs {
+  width: 1.5rem;
+  height: 1rem;
+  background-color: #2563eb;
+  border-radius: 0.125rem;
+}
+
+.all-enrolled-page .community-text {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .all-enrolled-page .header-content {
+    padding: 0 1rem;
+  }
+
+  .all-enrolled-page .main-content {
+    padding: 1rem;
+  }
+
+  .all-enrolled-page .event-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .all-enrolled-page .illustration-container {
+    width: 100%;
+    height: 12rem;
+  }
+
+  .all-enrolled-page .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .all-enrolled-page .navigation {
+    gap: 1rem;
+  }
+
+  .all-enrolled-page .nav-button {
+    font-size: 0.875rem;
+  }
+
+  .all-enrolled-page .page-title {
+    font-size: 1.875rem;
+  }
+
+  .all-enrolled-page .event-title {
+    font-size: 1.25rem;
+  }
+
+  .all-enrolled-page .countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .all-enrolled-page .action-buttons {
+    flex-direction: column;
+  }
+}

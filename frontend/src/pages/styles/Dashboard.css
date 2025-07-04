@@ -1,0 +1,480 @@
+/* Dashboard.css */
+
+/* Container */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 288px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-content {
+  padding: 24px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-text {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 18px;
+  margin: 0 0 4px 0;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+}
+
+.nav-item:hover {
+  background-color: #f9fafb;
+}
+
+.nav-item-active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.nav-text {
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 32px;
+}
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 32px 0;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+}
+
+.stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* Waste Section */
+.waste-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 24px 0;
+}
+
+.waste-summary {
+  margin-bottom: 32px;
+}
+
+.waste-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.waste-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.waste-growth {
+  font-size: 14px;
+  color: #2563eb;
+}
+
+.waste-percentage {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.waste-charts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.waste-chart-item {
+  text-align: center;
+}
+
+.wave-chart {
+  height: 64px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.wave-svg {
+  overflow: visible;
+}
+
+.waste-name {
+  font-size: 14px;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Badges */
+.badges-section {
+  /* No additional styling needed */
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.badge {
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-content {
+  position: relative;
+  z-index: 10;
+}
+
+.badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-title {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Eco Warrior Badge */
+.eco-warrior {
+  background-color: #166534;
+  color: white;
+}
+
+.eco-icon {
+  background-color: #16a34a;
+}
+
+.eco-inner {
+  width: 32px;
+  height: 32px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eco-center {
+  width: 16px;
+  height: 24px;
+  background-color: #166534;
+  border-radius: 50%;
+}
+
+.badge-decoration {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-color: #16a34a;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* Community Hero Badge */
+.community-hero {
+  background-color: #fb923c;
+  color: white;
+}
+
+.hero-icon {
+  background-color: white;
+}
+
+.hero-inner {
+  width: 32px;
+  height: 32px;
+  background-color: #fb923c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-star {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Ocean Saver Badge */
+.ocean-saver {
+  background-color: #dbeafe;
+  color: #4b5563;
+  opacity: 0.6;
+}
+
+.ocean-icon {
+  background-color: #bfdbfe;
+}
+
+.ocean-inner {
+  width: 32px;
+  height: 32px;
+  background-color: #93c5fd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocean-wave {
+  color: #2563eb;
+  font-size: 12px;
+}
+
+/* Trail Blazer Badge */
+.trail-blazer {
+  background-color: #fef3c7;
+  color: #4b5563;
+  opacity: 0.6;
+}
+
+.trail-icon {
+  background-color: #fde68a;
+}
+
+.trail-inner {
+  width: 24px;
+  height: 24px;
+  background-color: #d97706;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+/* Certificate Section */
+.certificate-section {
+  /* No additional styling needed */
+}
+
+.certificate-info {
+  margin-bottom: 24px;
+}
+
+.certificate-label {
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.certificate-title {
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.certificate-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Certificate Preview */
+.certificate-preview {
+  position: relative;
+}
+
+.certificate-border {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.certificate-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid #bbf7d0;
+}
+
+.certificate-text {
+  text-align: center;
+}
+
+.cert-type {
+  font-size: 12px;
+  color: #16a34a;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.cert-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 8px;
+}
+
+.cert-subtitle {
+  font-size: 12px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.cert-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.cert-description {
+  font-size: 12px;
+  color: #4b5563;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.cert-signature {
+  border-top: 1px solid #bbf7d0;
+  padding-top: 8px;
+}
+
+.signature-text {
+  font-size: 12px;
+  color: #16a34a;
+  font-style: italic;
+}
