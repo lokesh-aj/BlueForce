@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import '../styles/EventCard.css'
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, onClick }) => {
   // Change 'location' to 'fullLocation' to match your data structure
   const { id, title, fullLocation, image } = event 
 
   return (
-    <Link to={`/events/enroll/${id}`} className="event-card-link" style={{ textDecoration: 'none' }}>
+    <div className="event-card-link" style={{ textDecoration: 'none' }} onClick={() => onClick(event)}>
       <div className="event-card">
         <img src={image} alt={title} />
         <div className="event-info">
@@ -16,7 +15,7 @@ const EventCard = ({ event }) => {
           <p>{fullLocation}</p> 
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
