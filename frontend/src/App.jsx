@@ -1,17 +1,17 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import Home from './pages/Home'
-import VolunteerHomePage from './pages/VolunteerHomePage'
-import VolunteerDashboard from './pages/VolunteerDashboard'
-import AllEnrolledEvent from './pages/AllEnrolledEvent'
-import CreateEvent from './pages/admin/CreateEvent'
-import LogWaste from './pages/LogWaste'
-import ScanQR from './pages/ScanQR'
-import CreateQR from './pages/CreateQR'
-import EventEnroll from './pages/EventEnroll'
-import './App.css'
-
-
+import Home from './pages/Home';
+import VolunteerHomePage from './pages/VolunteerHomePage';
+import VolunteerDashboard from './pages/VolunteerDashboard';
+import AllEnrolledEvent from './pages/AllEnrolledEvent';
+import CreateEvent from './pages/admin/CreateEvent';
+import LogWaste from './pages/LogWaste';
+import ScanQR from './pages/ScanQR';
+import CreateQR from './pages/CreateQR';
+import EventEnroll from './pages/EventEnroll';
+import Login from './components/Auth/Login';
+import Signup from './components/Auth/Signup';
+import './App.css';
 
 function App() {
   return (
@@ -28,10 +28,13 @@ function App() {
           <Route path="/log-waste" element={<LogWaste />} />
           <Route path="/create-qr" element={<CreateQR />} />
           <Route path="/event/:id" element={<EventEnroll />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
-  )
+  );
 }
-export default App
+
+export default App;
