@@ -3,13 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
 import EventDetails from '../components/events/EventDetails';
 import EventConfirmation from '../components/events/EventConfirmation';
-import { events } from '../data/events'; // Import the shared events data
+import { events } from '../data/events';
 import './styles/EventEnroll.css';
+import SuccessModal from '../components/common/SuccessModal'; // Import the new SuccessModal
 
 function EventEnroll() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [event, setEvent] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   useEffect(() => {
     const foundEvent = events.find(e => e.id === parseInt(id));
@@ -18,7 +20,7 @@ function EventEnroll() {
       setEvent(foundEvent);
     } else {
       console.error('Event not found for ID:', id);
-      navigate('/events'); // Redirect to the events listing page if not found
+      navigate('/events');
     }
   }, [id, navigate]);
 
@@ -37,7 +39,13 @@ function EventEnroll() {
 
   const handleEnroll = () => {
     console.log('Enrolling with items:', checkedItems);
-    alert(`Successfully enrolled in ${event.title}!`);
+    setShowSuccessModal(true);
+  };
+
+  const closeSuccessModal = () => {
+    setShowSuccessModal(false);
+    // Optional: Navigate to a different page after closing the modal
+    // navigate('/allEnrolledEvent');
   };
 
   if (!event) {
@@ -56,11 +64,7 @@ function EventEnroll() {
       <div className="event-enroll-container">
         <div className="event-enroll-content">
           <div className="event-details-section">
-            {/* Keep the main title */}
             <h1>{event.title}</h1>
-
-            {/* REMOVED: The duplicate <p className="event-description">{event.description}</p> */}
-            {/* The EventDetails component should display the main details, including description */}
             <EventDetails event={event} />
           </div>
 
@@ -70,9 +74,8 @@ function EventEnroll() {
               <img src={event.image} alt={event.title} />
             </div>
 
-            {/* REPLACED: Hardcoded description with dynamic event.description */}
             <p className="enrollment-description">
-              {event.description} {/* Now uses the description from the event data */}
+              {event.description}
             </p>
 
             <EventConfirmation
@@ -83,6 +86,15 @@ function EventEnroll() {
           </div>
         </div>
       </div>
+
+      {/* Use the new SuccessModal component */}
+      {showSuccessModal && (
+        <SuccessModal
+          title="Enrollment Successful!"
+          message={`You have successfully enrolled in ${event.title}.`}
+          onClose={closeSuccessModal}
+        />
+      )}
     </div>
   );
 }
