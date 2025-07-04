@@ -5,6 +5,7 @@ import FilterSection from '../components/events/FilterSection'
 import EventCard from '../components/events/EventCard'
 import Pagination from '../components/common/Pagination'
 import './styles/VolunteerHomePage.css'
+import { events } from '../data/events'; // Import the shared events data
 
 function VolunteerHomePage() {
   const [filters, setFilters] = useState({
@@ -15,50 +16,12 @@ function VolunteerHomePage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
-  const events = [
-    {
-      id: 1,
-      title: 'Coastal Cleanup at Sandy Shores',
-      location: 'Sandy Shores, CA',
-      image: 'https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?q=80&w=300'
-    },
-    {
-      id: 2,
-      title: 'Community Beach Cleanup at Sunset Cove',
-      location: 'Sunset Cove, FL',
-      image: './larrywheels_placeholder_img.jpg'
-    },
-    {
-      id: 3,
-      title: 'Eco-Warriors Cleanup at Paradise Beach',
-      location: 'Paradise Beach, HI',
-      image: './larrywheels_placeholder_img.jpg'
-    },
-    {
-      id: 4,
-      title: 'Ocean Guardians Cleanup at Coral Bay',
-      location: 'Coral Bay, FL',
-      image: 'https://images.unsplash.com/photo-1621451537084-482c73073a0f?q=80&w=300'
-    },
-    {
-      id: 5,
-      title: 'Beach Beautification Day at Mariner\'s Point',
-      location: 'Mariner\'s Point, OR',
-      image: 'https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=300'
-    },
-    {
-      id: 6,
-      title: 'Shoreline Savers Cleanup at Pelican Beach',
-      location: 'Pelican Beach, NC',
-      image: './larrywheels_placeholder_img.jpg'
-    }
-  ]
-
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({
       ...prev,
       [filterType]: value
     }))
+    setCurrentPage(1); // Reset to first page on filter change
   }
 
   const handleSearch = (query) => {
@@ -66,37 +29,70 @@ function VolunteerHomePage() {
     setCurrentPage(1) // Reset to first page on new search
   }
 
-  const handleEnroll = (event) => {
-    // Implement enrollment logic here
-    console.log('Enrolling in event:', event)
-  }
+  // --- Start: Filtering and Pagination Logic ---
+  // Apply search query
+  const searchedEvents = events.filter(event => {
+    const titleMatch = event.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const descriptionMatch = event.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return titleMatch || descriptionMatch;
+  });
+
+  // Apply filters to searched results
+  const filteredEvents = searchedEvents.filter(event => {
+    const locationMatch = filters.location === '' || event.fullLocation.toLowerCase().includes(filters.location.toLowerCase());
+    
+    // Note: event.wasteType.focus is an object. You'll need to adjust FilterSection
+    // if you want to filter by the exact wasteType options provided in FilterSection's select.
+    // For now, let's assume wasteType.focus is a string you can match.
+    const wasteTypeMatch = filters.wasteType === '' || (event.wasteType && event.wasteType.focus.toLowerCase().includes(filters.wasteType.toLowerCase()));
+    
+    // Date range filtering would require more complex date parsing and comparison.
+    // For simplicity, it's omitted here but you'd implement it based on event.date
+    const dateRangeMatch = true; // Placeholder for date filtering logic
+
+    return locationMatch && wasteTypeMatch && dateRangeMatch;
+  });
+
+  // Pagination logic
+  const eventsPerPage = 6; // Or whatever number you prefer
+  const indexOfLastEvent = currentPage * eventsPerPage;
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+  const currentEvents = filteredEvents.slice(indexOfFirstEvent, indexOfLastEvent);
+  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+  // --- End: Filtering and Pagination Logic ---
+
 
   return (
     <div className="volunteer-home">
       <Navbar />
-      
+
       <main>
         <div className="search-section">
           <SearchBar onSearch={handleSearch} />
-          <FilterSection 
+          <FilterSection
             filters={filters}
             onFilterChange={handleFilterChange}
           />
         </div>
 
         <div className="events-grid">
-          {events.map(event => (
-            <EventCard 
-              key={event.id}
-              event={event}
-              onEnroll={handleEnroll}
-            />
-          ))}
+          {/* Map over currentEvents (after filtering and pagination) */}
+          {currentEvents.length > 0 ? (
+            currentEvents.map(event => (
+              <EventCard
+                key={event.id}
+                event={event}
+              />
+            ))
+          ) : (
+            <p>No events found matching your criteria.</p>
+          )}
         </div>
 
-        <Pagination 
+        <Pagination
           currentPage={currentPage}
-          totalPages={5}
+          // Pass the dynamically calculated totalPages
+          totalPages={totalPages} 
           onPageChange={setCurrentPage}
         />
       </main>

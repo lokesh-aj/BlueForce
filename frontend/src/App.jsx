@@ -4,7 +4,6 @@ import VolunteerHomePage from './pages/VolunteerHomePage'
 import VolunteerDashboard from './pages/VolunteerDashboard'
 import AllEnrolledEvent from './pages/AllEnrolledEvent'
 import CreateEvent from './pages/admin/CreateEvent'
-import LogWaste from './pages/LogWaste'
 import './App.css'
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path="/volunteerDashboard" element={<VolunteerDashboard />} />
           <Route path="/allEnrolledEvent" element={<AllEnrolledEvent />} />
           <Route path="/admin/createEvent" element={<CreateEvent />} />
-          <Route path="/log-waste" element={<LogWaste />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
