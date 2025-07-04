@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/FilterSection.css'
+import '../styles/FilterSection.css'
 
 const FilterSection = ({ filters, onFilterChange }) => {
   const { location, wasteType, dateRange } = filters
