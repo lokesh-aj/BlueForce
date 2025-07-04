@@ -1,17 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/EventCard.css'
 
-const EventCard = ({ event, onEnroll }) => {
-  const { title, location, image } = event
+const EventCard = ({ event }) => {
+  // Change 'location' to 'fullLocation' to match your data structure
+  const { id, title, fullLocation, image } = event 
 
   return (
-    <div className="event-card" onClick={() => onEnroll(event)}>
-      <img src={image} alt={title} />
-      <div className="event-info">
-        <h3>{title}</h3>
-        <p>{location}</p>
+    <Link to={`/events/enroll/${id}`} className="event-card-link" style={{ textDecoration: 'none' }}>
+      <div className="event-card">
+        <img src={image} alt={title} />
+        <div className="event-info">
+          <h3>{title}</h3>
+          {/* Use fullLocation here */}
+          <p>{fullLocation}</p> 
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

@@ -1,5 +1,11 @@
 @import '../../styles/variables.css';
 
+.event-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .event-card {
   border-radius: var(--radius-lg);
   overflow: hidden;

@@ -1,0 +1,42 @@
+@import '../../../styles/variables.css';
+
+.event-details {
+  background-color: var(--background-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.detail-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.detail-section p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.focus-text {
+  font-style: italic;
+}
+
+.map-container {
+  margin-top: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 200px;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
