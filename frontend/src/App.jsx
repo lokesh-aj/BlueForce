@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<VolunteerHomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/events" element={<VolunteerHomePage />} />
         {/* Change the path here to match the Link: /events/enroll/:id */}
         <Route path="/events/enroll/:id" element={<EventEnroll />} />
