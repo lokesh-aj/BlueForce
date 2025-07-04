@@ -9,7 +9,6 @@ import ScanQR from './pages/ScanQR'
 import CreateQR from './pages/CreateQR'
 import EventEnroll from './pages/EventEnroll'
 import './App.css'
-// import EventEnroll from './pages/EventEnroll'
 
 function App() {
   return (
