@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import VolunteerHomePage from './pages/VolunteerHomePage'
+import EventEnroll from './pages/EventEnroll'
 import './App.css'
 
 function App() {
   return (
     <Router>
-      <div id="root">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/volunteer" element={<VolunteerHomePage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<VolunteerHomePage />} />
+        <Route path="/events" element={<VolunteerHomePage />} />
+        {/* Change the path here to match the Link: /events/enroll/:id */}
+        <Route path="/events/enroll/:id" element={<EventEnroll />} />
+      </Routes>
     </Router>
   )
 }
