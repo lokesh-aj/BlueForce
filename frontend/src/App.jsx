@@ -9,7 +9,6 @@ import ScanQR from './pages/ScanQR'
 import CreateQR from './pages/CreateQR'
 import EventEnroll from './pages/EventEnroll'
 import './App.css'
-// import EventEnroll from './pages/EventEnroll'
 
 function App() {
   return (
@@ -17,9 +16,8 @@ function App() {
       <div id="root">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/events" element={<VolunteerHomePage />} />
-          <Route path="/events/:id" element={<EventEnroll />} />
-          <Route path="/volunteerProfile" element={<VolunteerDashboard />} />
+          <Route path="/volunteer" element={<VolunteerHomePage />} />
+          <Route path="/volunteerDashboard" element={<VolunteerDashboard />} />
           <Route path="/allEnrolledEvent" element={<AllEnrolledEvent />} />
           <Route path="/admin/createEvent" element={<CreateEvent />} />
           <Route path="/scan-qr" element={<ScanQR />} />
