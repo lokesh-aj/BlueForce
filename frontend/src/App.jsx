@@ -7,8 +7,9 @@ import CreateEvent from './pages/admin/CreateEvent'
 import LogWaste from './pages/LogWaste'
 import ScanQR from './pages/ScanQR'
 import CreateQR from './pages/CreateQR'
-import './App.css'
 import EventEnroll from './pages/EventEnroll'
+import './App.css'
+// import EventEnroll from './pages/EventEnroll'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/scan-qr" element={<ScanQR />} />
           <Route path="/log-waste" element={<LogWaste />} />
           <Route path="/create-qr" element={<CreateQR />} />
+          <Route path="/event/:id" element={<EventEnroll />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
