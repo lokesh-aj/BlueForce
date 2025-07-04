@@ -1,22 +1,22 @@
-import React from 'react'
-import '../styles/EventCard.css'
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
+import '../styles/EventCard.css';
 
-const EventCard = ({ event, onClick }) => {
-  // Change 'location' to 'fullLocation' to match your data structure
-  const { id, title, fullLocation, image } = event 
+const EventCard = ({ event }) => { // Removed 'onClick' from props
+  const { id, title, fullLocation, image } = event;
 
   return (
-    <div className="event-card-link" style={{ textDecoration: 'none' }} onClick={() => onClick(event)}>
+    // Use Link component for direct navigation
+    <Link to={`/events/${id}`} className="event-card-link" style={{ textDecoration: 'none' }}>
       <div className="event-card">
         <img src={image} alt={title} />
         <div className="event-info">
           <h3>{title}</h3>
-          {/* Use fullLocation here */}
-          <p>{fullLocation}</p> 
+          <p>{fullLocation}</p>
         </div>
       </div>
-    </div>
-  )
-}
+    </Link>
+  );
+};
 
-export default EventCard
+export default EventCard;
