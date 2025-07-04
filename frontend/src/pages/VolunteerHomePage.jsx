@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Navbar from '../components/Navbar'
-import SearchBar from '../components/SearchBar'
-import FilterSection from '../components/FilterSection'
-import EventCard from '../components/EventCard'
-import Pagination from '../components/Pagination'
+import Navbar from '../components/navbar/Navbar'
+import SearchBar from '../components/common/SearchBar'
+import FilterSection from '../components/events/FilterSection'
+import EventCard from '../components/events/EventCard'
+import Pagination from '../components/common/Pagination'
 import './styles/VolunteerHomePage.css'
 
 function VolunteerHomePage() {
