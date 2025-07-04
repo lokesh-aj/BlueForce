@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import VolunteerHomePage from './pages/VolunteerHomePage'
+import VolunteerDashboard from './pages/VolunteerDashboard'
+import AllEnrolledEvent from './pages/AllEnrolledEvent'
+import CreateEvent from './pages/admin/CreateEvent'
 import './App.css'
 
 function App() {
@@ -10,6 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/volunteer" element={<VolunteerHomePage />} />
+          <Route path="/volunteerDashboard" element={<VolunteerDashboard />} />
+          <Route path="/allEnrolledEvent" element={<AllEnrolledEvent />} />
+          <Route path="/admin/createEvent" element={<CreateEvent />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
