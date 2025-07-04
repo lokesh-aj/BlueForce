@@ -16,7 +16,7 @@ function App() {
       <div id="root">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/volunteer" element={<VolunteerHomePage />} />
+          <Route path="/events" element={<VolunteerHomePage />} />
           <Route path="/volunteerDashboard" element={<VolunteerDashboard />} />
           <Route path="/allEnrolledEvent" element={<AllEnrolledEvent />} />
           <Route path="/admin/createEvent" element={<CreateEvent />} />
@@ -24,7 +24,7 @@ function App() {
           <Route path="/log-waste" element={<LogWaste />} />
           <Route path="/create-qr" element={<CreateQR />} />
           <Route path="/event/:id" element={<EventEnroll />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
       </div>
     </Router>
